@@ -109,3 +109,7 @@ DHCP
 DNS
 Auth
 WIFI Performance
+
+Lib.
+sudo apt update
+sudo apt install python3-matplotlib python3-reportlab
