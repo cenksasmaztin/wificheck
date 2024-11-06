@@ -111,5 +111,15 @@ Auth
 WIFI Performance
 
 Lib.
+
+Kodunuzda kullanılan kütüphaneleri belirledim. Gerekli kütüphaneler ve bunların sudo apt install komutuyla yüklenmesi için aşağıdaki listeyi oluşturabilirsiniz:
+	1.	subprocess, re, time, socket, os, datetime, statistics – Bunlar Python’ın yerleşik kütüphaneleridir; ayrıca yükleme gerektirmezler.
+	2.	matplotlib – Grafik çizimi için kullanılan kütüphane.
+	3.	reportlab – PDF oluşturma için kullanılan kütüphane.
+
+Bu kütüphaneleri yüklemek için terminalde şu komutları çalıştırabilirsiniz:
+
 sudo apt update
 sudo apt install python3-matplotlib python3-reportlab
+Bu komutlarla matplotlib ve reportlab kütüphanelerini yükleyerek, kodunuzu sanal ortam kullanmadan çalıştırabilirsiniz. ￼
+
