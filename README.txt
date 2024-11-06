@@ -55,7 +55,7 @@ Usage
 
 Run the script using Python 3:
 
-python3 wificheck301024.py
+sudo python3 wificheck301024.py
 
 During Execution
 
