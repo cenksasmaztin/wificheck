@@ -1,4 +1,4 @@
-
+#wificheck
 
 
 
@@ -36,6 +36,7 @@
 Overview
 
 This Python script is designed to monitor and analyze the performance of Wi-Fi networks in real-time. It collects various metrics, such as signal strength, SNR (Signal-to-Noise Ratio), data rates, throughput, and network performance indicators like ping times, DHCP, DNS, and authentication status. The tool displays results in a tabular format on the terminal and generates a summary report with a graphical visualization saved as a PDF.
+This code must be running Rasberr pi devices.This device connect costumers corparete wifi networks.
 
 Features
 
