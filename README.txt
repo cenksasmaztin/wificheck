@@ -2,7 +2,7 @@
 
 
 
-#Copyright (c) 2024  Cenk Sasmaztin <cenk@oxoonetworkscom>
+#Copyright (c) 2024  Cenk Sasmaztin <cenk@oxoonetworks.com>
 #All rights reserved.
 
 #Redistribution and use in source and binary forms, with or without
