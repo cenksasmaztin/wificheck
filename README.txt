@@ -111,9 +111,9 @@ DNS
 Auth
 WIFI Performance
 
-TR
+#TR
 
-BU SCRIPTİN AMACI
+#BU SCRIPTİN AMACI
 
 Genel Bakış
 
