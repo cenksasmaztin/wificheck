@@ -111,16 +111,76 @@ DNS
 Auth
 WIFI Performance
 
-Lib.
+TR
 
-Kodunuzda kullanılan kütüphaneleri belirledim. Gerekli kütüphaneler ve bunların sudo apt install komutuyla yüklenmesi için aşağıdaki listeyi oluşturabilirsiniz:
-	1.	subprocess, re, time, socket, os, datetime, statistics – Bunlar Python’ın yerleşik kütüphaneleridir; ayrıca yükleme gerektirmezler.
-	2.	matplotlib – Grafik çizimi için kullanılan kütüphane.
-	3.	reportlab – PDF oluşturma için kullanılan kütüphane.
+BU SCRIPTİN AMACI
 
-Bu kütüphaneleri yüklemek için terminalde şu komutları çalıştırabilirsiniz:
+Genel Bakış
 
-sudo apt update
-sudo apt install python3-matplotlib python3-reportlab
-Bu komutlarla matplotlib ve reportlab kütüphanelerini yükleyerek, kodunuzu sanal ortam kullanmadan çalıştırabilirsiniz. ￼
+Bu Python scripti, Wi-Fi ağlarının performansını gerçek zamanlı olarak izlemek ve analiz etmek üzere tasarlanmıştır. Sinyal gücü, SNR (Sinyal-Gürültü Oranı), veri hızları, throughput gibi çeşitli ölçümleri ve ağ performansı göstergeleri (ping süreleri, DHCP, DNS ve kimlik doğrulama durumu) toplar. Araç, sonuçları terminalde tablo biçiminde gösterir ve grafiksel bir görselleştirme ile özet rapor hazırlar ve PDF olarak kaydeder. Bu kodun Raspberry Pi cihazlarında çalıştırılması ve bu cihazın müşterilerin kurumsal Wi-Fi ağlarına bağlanması gerekmektedir.
 
+Özellikler
+
+Gerçek Zamanlı İzleme: Wi-Fi performans verilerini sürekli olarak toplar ve görüntüler.
+Ağ Performansı Ölçümleri: Sinyal gücü, SNR, veri hızları, throughput ve gecikme (gateway ve internet ping) ölçümleri yapar.
+Bağlantı Testleri: Ağ işlevselliğini sağlamak için DHCP ve DNS kontrolleri yapar.
+Kimlik Doğrulama Yöntemi Tespiti: Kullanılan Wi-Fi kimlik doğrulama protokolünü (ör. WPA3, WPA2) belirler.
+Otomatik Raporlama: İzleme oturumunun sonunda grafiksel analiz içeren özet bir rapor oluşturur ve kaydeder.
+Özelleştirilebilir: Varsayılan ağ arayüzü ve diğer parametreler özel ihtiyaçlara göre ayarlanabilir.
+Kurulum
+
+Gerekli Python paketlerinin kurulu olduğundan emin olun:
+
+pip install matplotlib reportlab
+Kullanım
+
+Scripti Python 3 ile çalıştırın:
+
+sudo python3 wificheck301024.py
+Çalıştırma Sırasında
+
+Script, Wi-Fi performans ölçümlerinin gerçek zamanlı bir tablosunu görüntüler.
+Analizi durdurmak için CTRL+C tuşlarına basın.
+Çalıştırma Sonrası
+
+Terminalde bir özet rapor görüntülenir.
+Grafiksel analiz içeren ayrıntılı bir PDF raporu report/ dizinine kaydedilir.
+Gereksinimler
+
+Python 3.x
+Grafik oluşturmak için matplotlib
+PDF raporu oluşturmak için reportlab
+Wi-Fi durumu komutları için wpa_cli
+Wi-Fi bilgisi toplamak için iw
+Gecikme kontrolleri için ping aracı
+Ağ arayüzü wlan0 (koddaki ayarlanabilir)
+Rapor Detayları
+
+Özet: Ortalama sinyal gücü, SNR, veri hızı, throughput, ping süreleri ve başarılı, zayıf ve başarısız test sayıları içerir.
+Grafiksel Görselleştirme: İzleme süresi boyunca sinyal gücü, SNR ve ping sürelerindeki değişimleri gösteren çizgi grafikleri.
+Özelleştirme
+
+auth_check ve get_wifi_info işlevlerindeki interface değişkenini değiştirerek farklı bir ağ arayüzü kullanabilirsiniz.
+gateway_check ve internet_check işlevlerindeki ping hedeflerini farklı ağ ortamları için değiştirebilirsiniz.
+Yazar
+
+Oxoo Networks LLC tarafından oluşturulmuştur.
+
+Örnek Çıktı
+
+Zaman Damgası
+MAC Adresi
+SSID
+AP
+Frekans
+Kanal
+Sinyal Gücü
+Veri Hızı
+Throughput
+SNR
+GTW Ping
+INT Ping
+DHCP
+DNS
+Kimlik Doğrulama
+WiFi Performansı
